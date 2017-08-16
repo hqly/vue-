@@ -14,9 +14,10 @@ Vue.use(MintUI);
 
 
 // 导入自己的东西
-
+import ImgPreview from '../component/plugin/img_preview_install.js';
+Vue.use(ImgPreview);
 // 导入过滤器
-import Filter from './filter';
+import Filter from './filter.js';
 Vue.use(Filter);
 
 // 导入组件

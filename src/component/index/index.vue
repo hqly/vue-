@@ -1,6 +1,8 @@
 <template>
   <article class="index">
-      <v-swipe></v-swipe>
+      <v-swipe>
+        
+      </v-swipe>
       <v-nav></v-nav>
   </article>
 </template>
