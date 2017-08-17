@@ -54,6 +54,8 @@ export default {
                 if (body.status == 0 && body.message.length > 0) {
                     this.list.push(...body.message);
                     this.pageindex++;
+                }else if(body.message.length == 0){
+                    this.$refs.loadMoreBtn.disabled=true;
                 }
             })
         }

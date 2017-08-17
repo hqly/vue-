@@ -17,5 +17,5 @@ export default {
     // 商品
     goodsList:domain+'/api/getgoods/',//商品列表
     goodsPrice:domain+'/api/goods/getinfo/',//商品价格相关信息
-    goodsDetails:domain+'/api/goods/getdesc',//商品图文介绍
+    goodsDetails:domain+'/api/goods/getdesc/',//商品图文介绍
 };
