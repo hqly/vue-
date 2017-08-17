@@ -9,9 +9,9 @@
 				<span class="mui-icon mui-icon-extra mui-icon-extra-gift"></span>
 				<span class="mui-tab-label">商品购买</span>
 			</router-link>
-			<router-link class="mui-tab-item" to="/shopcart">
+			<router-link class="mui-tab-item" to="/shopcart/list">
 				<span class="mui-icon mui-icon-extra mui-icon-extra-express">
-					<span class="mui-badge">0</span>
+					<span class="mui-badge">{{total}}</span>
 				</span>
 				<span class="mui-tab-label">购物车</span>
 			</router-link>
@@ -24,8 +24,13 @@
 </template>
 
 <script>
+import goodsStorage from '../../js/model/goods.js';
 export default {
-
+	data() {
+		return {
+			total: goodsStorage.get()
+		};
+	}
 }
 </script>
 

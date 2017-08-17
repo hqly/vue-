@@ -28,7 +28,7 @@
             </div>
             <!-- 按钮 -->
             <div class="mui-card-footer">
-                <button type="button" class="mui-btn mui-btn-success mui-btn-block mui-btn-outlined">结算</button>
+                <router-link to="/shopcart/list" class="mui-btn mui-btn-success mui-btn-block mui-btn-outlined">结算</router-link>
                 <div></div>
                 <button @click="addShopcart" type="button" class="mui-btn mui-btn-success mui-btn-block mui-btn-outlined">加入购物车</button>
             </div>
@@ -50,25 +50,26 @@
 import config from '../../js/config.js';
 import goodsStorage from '../../js/model/goods.js';
 import Ctitle from '../common/title.vue';
-import Cswipe from '../index/swipe.vue';
+import Cswipe from '../common/swipe.vue';
 import Ccomment from '../common/comment.vue';
 import Cnumbox from '../common/numbox.vue';
-import Cinfo from './son/info.vue'
+import Cinfo from './son/info.vue';
 export default {
     data() {
         return {
-            title: '商品详情',
+            title: '商品购买',
             lunbos: [],
             goods: {},
             selectedTab: '',
             id: this.$route.params.id,
+            // 页面一上来就从本地读取这个商品的历史购买数量
             total:goodsStorage.get(this.$route.params.id)
         }
     },
     methods: {
         //获取轮播数据
         getLunbos() {
-            let url = config.photoHums + this.$route.params.id;
+            let url = config.photoHums + this.id;
             this.$http.get(url).then(rep => {
                 let body = rep.body;
                 if (body.status == 0) {

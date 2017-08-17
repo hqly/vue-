@@ -24,6 +24,7 @@
     "dev": "webpack-dev-server --inline --open --port 8888"
   },
   "dependencies": {
+    "min-ui": "^0.0.2",
     "mint-ui": "^2.2.9",
     "moment": "^2.18.1",
     "vue": "^2.3.4",

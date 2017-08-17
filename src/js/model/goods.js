@@ -15,6 +15,11 @@ export default {
             return totals.length && totals.reduce((v1,v2)=>(+v1)+(+v2));
         }
     },
+    // 根据id删除对应商品的数量，删除后记得持久化存储最新结果
+    remove(id){
+        delete goodsTotal[id];
+        storage.set(storageKey,goodsTotal);
+    },
     // 获取所有id组成的数组
     getIDList(){
         return Object.keys(goodsTotal);
